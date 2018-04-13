@@ -16,11 +16,11 @@ import IslamIcon from "../assets/Icons";
 
 let {width, height } = Dimensions.get('window');
 const prays = [
-	{icon: "subah-prayer", name: "Suuba", time: "6:29"},
+	{icon: "subah-prayer", name: "Fadjr", time: "6:29"},
 	{icon: "zuhar-prayer", name: "Tisbar", time: "14:15"},
 	{icon: "ramadan-sunrise", name: "Takussan", time: "16:45"},
 	{icon: "maghrib-prayer", name: "Timis", time: "18:51"},
-	{icon: "isha-prayer", name: "Gue", time: "19:51"},
+	{icon: "isha-prayer", name: "Guewe", time: "19:51"},
 ]
 export default class PraysList extends Component {
 	constructor(props){
@@ -52,7 +52,7 @@ export default class PraysList extends Component {
 	render() {
 		return (
 			<View style={styles.page_container} >
-				<Text style={styles.date} > du 07 DEC au 14 DEC </Text>
+				<Text style={styles.date} > du 21 DEC au 28 DEC </Text>
 		        <FlatList
 		          keyExtractor={this._keyExtractor}
 		          data={prays}	

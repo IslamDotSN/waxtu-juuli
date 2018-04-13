@@ -519,6 +519,7 @@
 				00E356EF1AD99517003FC87E /* WaxtuJuuliTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				A6A00127E4B042D991CC357F /* Resources */,
+				23989AA898EF44309A6C2EC4 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -566,6 +567,14 @@
 				E48AF2C841364C3F94B4B8C4 /* Zocial.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
+		23989AA898EF44309A6C2EC4 /* Frameworks */ = {
+			isa = "PBXGroup";
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 			path = "";
 		};
@@ -1088,11 +1097,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaxtuJuuli.app/WaxtuJuuli";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\bugsnag-react-native\cocoa/**",
 				);
 			};
 			name = Debug;
@@ -1113,11 +1122,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaxtuJuuli.app/WaxtuJuuli";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\bugsnag-react-native\cocoa/**",
 				);
 			};
 			name = Release;
@@ -1140,6 +1149,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\bugsnag-react-native\cocoa/**",
 				);
 			};
 			name = Debug;
@@ -1161,6 +1171,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\bugsnag-react-native\cocoa/**",
 				);
 			};
 			name = Release;
@@ -1190,11 +1201,11 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\bugsnag-react-native\cocoa/**",
 				);
 			};
 			name = Debug;
@@ -1224,11 +1235,11 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\bugsnag-react-native\cocoa/**",
 				);
 			};
 			name = Release;
@@ -1253,7 +1264,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1278,7 +1288,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;

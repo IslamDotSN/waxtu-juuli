@@ -24,13 +24,51 @@ const Icon = createIconSetFromFontello(fontelloConfig);
 let {width, height } = Dimensions.get('window');
 const PARALLAX_HEADER_HEIGHT = height * 0.35;
 
+const DAYS = 1000 * 60 * 60 * 24;
+const HOURS = 1000 * 60 * 60;
+const MINUTES = 1000 * 60;
+const moment = require('moment');
+require('moment-precise-range-plugin');
 
 export default class LaPriere extends Component {
 	constructor(props){
 		super(props);
+		var next_pray_time = new Date("2017-12-24 06:24").getTime();
 		this.state = {
-			give_header_bg: false
+			interval_obj: null,
+			give_header_bg: false,
+			remain_time: null,
+			next_pray_time: next_pray_time
 		}
+	}
+	componentDidMount() {
+		this.runTime();
+		var next_pray_time = new Date("2017-12-24 06:24").getTime();
+		var x = setInterval(this.runTime.bind(this), 1000);
+		this.setState({
+			interval_obj: x,
+			give_header_bg: false,
+			next_pray_time: next_pray_time
+		});
+
+	}
+	runTime (){
+		var m1 = moment();
+		var m2 = moment("2017-12-24 06:24",'YYYY-MM-DD HH:mm:ss');
+		var diff = moment.preciseDiff(m1, m2, true);
+		let seconds = diff.seconds < 10 ? "0"+diff.seconds : diff.seconds; 
+		let minutes = diff.minutes < 10 ? "0"+diff.minutes : diff.minutes; 
+		let hours = diff.hours < 10 ? "0"+diff.hours : diff.hours; 
+	  // Display the result in the element with id="demo"
+		let remain = hours + ":" + minutes + ":" + seconds;
+
+		this.setState({remain_time: remain})
+
+	  // If the count down is finished, write some text 
+	  // if (distance < 0) {
+	  //   clearInterval(this.state.interval_obj);
+	  //   // document.getElementById("demo").innerHTML = "EXPIRED";
+	  // }
 	}
 	render() {
 		let title = "Prochaine prière dans";
@@ -61,8 +99,8 @@ export default class LaPriere extends Component {
 
 					<View style={styles.nextpray} >
 						<Text style={styles.nextpray_title} > {title.toUpperCase()} </Text>
-						<Text style={styles.nextpray_remain} > 02:32:65 </Text>
-						<Text style={styles.nextpray_name} > GUEWE </Text>
+						<Text style={styles.nextpray_remain} > {this.state.remain_time} </Text>
+						<Text style={styles.nextpray_name} > FADJR </Text>
 					</View>
 
 				</View>
@@ -95,7 +133,7 @@ const styles = StyleSheet.create({
   nextpray_name:{
   	color: "#fff",
   	fontFamily: "Anton",
-  	fontSize: 25,
+  	fontSize: 35,
   	lineHeight: 35
   },
   nextpray_remain:{
